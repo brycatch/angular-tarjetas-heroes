@@ -1,0 +1,12 @@
+<div class="animated fadeIn fast">
+    <h1>Resultados</h1>
+    <div *ngIf="!hayResultados">
+        No hay resultados para el valor {{ busqueda }}
+    </div>
+
+    <div class="card-columns" *ngIf="hayResultados">
+        <app-heroe-tarjeta *ngFor="let heroe of heroeBusqueda; let i = index;" [heroe]="heroe" [index]="i"
+            (heroeSeleccionado)="verHeroe($event)">
+        </app-heroe-tarjeta>
+    </div>
+</div>
